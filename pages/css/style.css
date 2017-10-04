@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#event-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 40px;
+  display: none;
+}
+
+#event {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  max-height: 80%;
+  max-width: 80%;
+  padding: 30px;
+  overflow: auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
