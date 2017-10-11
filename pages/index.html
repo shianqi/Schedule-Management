@@ -4,23 +4,38 @@
 	<meta charset='utf-8' />
 
 	<link href='./lib/fullcalendar.min.css' rel='stylesheet' />
-	<link href='./lib/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <link href='./lib/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <link href='./lib/bootstrap-slate.css' rel='stylesheet' />
+
 	<link href="./lib/fancybox.css" rel="stylesheet" />
 	<link href="./css/style.css" rel="stylesheet" />
 
 	<script src='./lib/jquery.min.js'></script>
-	<script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script>
+  <script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script>
 	<script src='./lib/moment.min.js'></script>
-	<script src='./lib/fullcalendar.min.js'></script>
+  <script src='./lib/fullcalendar.min.js'></script>
+
+  <script src='./lib/zh-cn.js'></script>
 	<script src='./lib/jquery.fancybox-1.3.1.pack.js'></script>
-	<script src='./lib/socket.io.js'></script>
+  <script src='./lib/socket.io.js'></script>
+
 </head>
 <body>
   <div id='calendar'></div>
   <div id="event-box">
-    <div id="event">
-      标题：<input type="text" placeholder="标题"/> <br>
-      <input id="submit-button" type="button" value="保存" />
+    <div id="event" class="form-group">
+      <label for="form-title">标题</label>
+      <input id="form-title" class="form-control" type="text" /> <br>
+      <label for="form-emergency-level">紧急程度</label>
+      <select class="form-control" id="form-emergency-level">
+        <option value="3" style="background: #97cd5e">不紧急不重要</option>
+        <option value="2" style="background: #5f99fd">紧急但不重要</option>
+        <option value="1" style="background: #fab57c">重要但不紧急</option>
+        <option value="0" style="background: #fe4040">重要又紧急</option>
+      </select> <br>
+      <input class="btn btn-info" id="submit-button" type="button" value="保存" />
+      <input class="btn btn-info" id="modify-button" type="button" value="修改" />
+      <input class="btn btn-danger" id="delete-button" type="button" value="删除" />
     </div>
   </div>
 </body>
